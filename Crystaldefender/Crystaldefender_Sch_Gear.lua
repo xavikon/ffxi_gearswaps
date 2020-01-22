@@ -6,7 +6,7 @@ function user_setup()
 	state.HybridMode:options('Normal','PDT')
 
 	gear.nuke_jse_back = {name="Lugh's Cape",augments={'INT+20','Mag. Acc+20 / Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
-        gear.staff_dd = {name="Akademos",augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15'}}
+    gear.staff_dd = {name="Akademos",augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15'}}
 	
 	gear.obi_cure_back = "Tempered Cape +1"
 
@@ -45,7 +45,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-        sets.precast.JA['Tabula Rasa'] = {legs="Peda. Pants +1"}
+    sets.precast.JA['Tabula Rasa'] = {legs="Peda. Pants +1"}
 	sets.precast.JA['Enlightenment'] = {} --body="Peda. Gown +1"
 
     -- Fast cast sets for spells
@@ -81,14 +81,20 @@ function init_gear_sets()
 	
 	-- Gear for Magic Burst mode.
                 --MB I: 10+5+5+11+10
-    sets.MagicBurst = {main=gear.staff_dd,neck="Mizu. Kubikazari",hands="Amalric Gages",ring1="Mujin Band",ring2="Locus Ring",
-                       ear1="Static Earring",legs="Merlinic Shalwar",feet="Jhakri Pigaches +2"}
+--    sets.MagicBurst = {main=gear.staff_dd,neck="Mizu. Kubikazari",hands="Amalric Gages",ring1="Mujin Band",ring2="Locus Ring",
+--                       ear1="Static Earring",legs="Merlinic Shalwar",feet="Jhakri Pigaches +2"}
+
+    sets.MagicBurst = {main=gear.stff_dd,sub="Enki Strap",range="",ammo="Dosis Tathlum",
+                            head=gear.merlinic_burst_head,neck="Mizu. Kubikazari",ear1="Static earring",ear2="Barkaro. Earring",
+                            body="Vedic coat",hands="Regal cuffs",ring1="Locus ring",ring2="Mujin band",
+                            back="Bookworm's cape",waist="Channeler's stone",legs=gear.merlinic_burst_legs,feet="Inspirited boots"}
     
     --6485,6485
     --6523,6523
-    sets.MagicBurst.Helix = set_combine(sets.MagicBurst, {ammo="Dosis Tathlum",
-                                        head="Mallquis Chapeau +1",body="Mallquis Saio +1",feet="Mallquis Clogs+1",waist="Acuity Belt",back="Bookworm's Cape",
-                                       })
+    sets.MagicBurst.Helix = {main=gear.stff_dd,sub="Enki Strap",range="",ammo="Dosis Tathlum",
+                            head=gear.merlinic_burst_head,neck="Mizu. Kubikazari",ear1="Static earring",ear2="Barkaro. Earring",
+                            body="Vedic coat",hands="Regal cuffs",ring1="Locus ring",ring2="Mujin band",
+                            back="Bookworm's cape",waist="Channeler's stone",legs=gear.merlinic_burst_legs,feet="Inspirited boots"} --feet="Inspirited boots"
 	
 	-- Gear for specific elemental nukes.
 	sets.element.Wind = {main="Marin Staff +1"}
