@@ -80,8 +80,7 @@ function init_gear_sets()
 
     sets.midcast.FastRecast = {body="Helios Jacket",hands="Helios Gloves",back="Lifestream Cape",legs="Geo. Pants +1",feet="Regal Pumps"}
 
-        sets.midcast.Geomancy = {range="Dunna",head="Azimuth hood +1",hands="Geo. Mitaines +2",body="Bagua tunic +1",
-                                ring1="Stikini Ring",ring2="Stikini Ring"}
+        sets.midcast.Geomancy = {range="Dunna",head="Azimuth hood +1",hands="Geo. Mitaines +2",body="Bagua tunic +1"}
 
 
 	--Extra Indi duration on any slot you can't get skill on here.

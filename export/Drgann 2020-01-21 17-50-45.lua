@@ -1,0 +1,15 @@
+sets.exported={
+    main="Oranyan",
+    ammo="Sapience Orb",
+    head={ name="Helios Band", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
+    body={ name="Helios Jacket", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+    hands={ name="Bagua Mitaines", augments={'Enhances "Curative Recantation" effect',}},
+    legs="Geomancy Pants",
+    feet={ name="Helios Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+    neck="Voltsurge Torque",
+    waist="Fucho-no-Obi",
+    left_ear="Strophadic Earring",
+    right_ear="Loquac. Earring",
+    left_ring="Prolix Ring",
+    back={ name="Lifestream Cape", augments={'Geomancy Skill +7','Indi. eff. dur. +16','Damage taken-3%',}},
+}

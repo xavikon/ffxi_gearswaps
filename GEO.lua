@@ -22,10 +22,13 @@ function job_setup()
 
 	autows = 'Realmrazer'
 	autofood = 'Miso Ramen'
-	autoindi = 'Torpor'
-	autoentrust = 'Fury'
+	--autoindi = 'Torpor'
+	autoindi = state.IndiSpell.value
+	autoentrust = state.EntrustSpell.value
+	--autoentrust = 'Fury'
 	autoentrustee = '<p1>'
-	autogeo = 'Frailty'
+	--autogeo = 'Frailty'
+	autogeo = state.GeoSpell.value
 	last_indi = nil
 	last_geo = nil
 	blazelocked = false
@@ -37,7 +40,7 @@ function job_setup()
     indi_timer = ''
     indi_duration = 180
 
-	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoNukeMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode","AutoBuffMode"},{"AutoBuffMode","Weapons","OffenseMode","WeaponskillMode","IdleMode","Passive","RuneElement","RecoverMode","ElementalMode","CastingMode","TreasureMode",})
+	init_job_states({"Capacity","AutoRuneMode","AutoTrustMode","AutoNukeMode","AutoWSMode","AutoShadowMode","AutoFoodMode","AutoStunMode","AutoDefenseMode","AutoBuffMode"},{"AutoBuffMode","Weapons","OffenseMode","WeaponskillMode","IdleMode","Passive","RuneElement","IndiSpell","GeoSpell","EntrustSpell","RecoverMode","ElementalMode","CastingMode","TreasureMode",})
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -354,6 +357,24 @@ function job_self_command(commandArgs, eventArgs)
 	elseif lowerCommand == 'elemental' then
 		handle_elemental(commandArgs)
 		eventArgs.handled = true
+	elseif lowerCommand == "cycleindi" then
+		table.remove(commandArgs,1)
+		handle_cycle(commandArgs)
+		autoindi = state.IndiSpell.value
+		if state.DisplayMode.value then update_job_states()	end
+		--eventArgs.handled = true
+	elseif lowerCommand == "cyclegeo" then
+		table.remove(commandArgs,1)
+		handle_cycle(commandArgs)
+		autogeo = state.GeoSpell.value
+		if state.DisplayMode.value then update_job_states()	end
+		--eventArgs.handled = true
+	elseif lowerCommand == "cycleentrust" then
+		table.remove(commandArgs,1)
+		handle_cycle(commandArgs)
+		autoentrust = state.EntrustSpell.value
+		if state.DisplayMode.value then update_job_states()	end
+		--eventArgs.handled = true
 	end
 end
 
